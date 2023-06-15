@@ -1,6 +1,6 @@
 {
   "name": "overlay_addtocart",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "move item to cart by overlay",
   "main": "index.js",
   "scripts": {
