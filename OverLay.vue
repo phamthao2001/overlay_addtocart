@@ -8,8 +8,8 @@
         --duration: ${duration}ms;
         --endScale: ${endScale};
         --endOpacity: ${endOpacity};
-        --startScale: ${startScale},
-        --startOpacity: ${startOpacity},
+        --startScale: ${startScale};
+        --startOpacity: ${startOpacity};
       `"
   >
     <div class="overlay-fade">
@@ -40,7 +40,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.overlay-fade {
+::v-deep .overlay-fade {
   position: fixed;
   top: var(--positionST);
   left: var(--positionSL);
