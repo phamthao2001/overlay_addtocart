@@ -8,6 +8,8 @@
         --duration: ${duration}ms;
         --endScale: ${endScale};
         --endOpacity: ${endOpacity};
+        --startScale: ${startScale},
+        --startOpacity: ${startOpacity},
       `"
   >
     <div class="overlay-fade">
@@ -29,6 +31,8 @@ export default {
       positionELeft: 600,
       endScale: 0,
       endOpacity: 0,
+      startScale: 1,
+      startOpacity: 1,
       duration: 1000,
     };
   },
@@ -48,8 +52,8 @@ export default {
 
 @keyframes fadeOverlay {
   0% {
-    transform: translate(-50%, -50%) scale(1);
-    opacity: 1;
+    transform: translate(-50%, -50%) scale(var(--startScale));
+    opacity: var(--startOpacity);
   }
   100% {
     transform: translate(

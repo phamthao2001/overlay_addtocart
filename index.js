@@ -33,6 +33,8 @@ export const overlay = (options) => {
   instance.$data.duration = options.duration || 1000;
   instance.$data.endScale = options.endScale || 0;
   instance.$data.endOpacity = options.endOpacity || 0;
+  instance.$data.startScale = options.startScale || 1;
+  instance.$data.startOpacity = options.startOpacity || 1;
   instance.$slots.default = options.render || null;
 
   const el = instance.$mount().$el;
@@ -40,6 +42,9 @@ export const overlay = (options) => {
   setTimeout(() => {
     options.to.removeChild(el);
     instance.$destroy();
+    if (typeof options.done === "function") {
+      options.done();
+    }
   }, options.duration || 1000);
 };
 
